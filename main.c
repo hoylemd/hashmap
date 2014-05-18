@@ -1,5 +1,5 @@
-#include "bucket.c"
-#include "hashmap.c"
+#include "bucket.h"
+#include "hashmap.h"
 
 #include <stdio.h>
 

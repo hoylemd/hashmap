@@ -1,31 +1,31 @@
 #ifndef BUCKET_H
 #define BUCKET_H
 
-// include standard libraries
+/* include standard libraries*/
 #include <stdlib.h>
-#include <strings.h>
+#include <string.h>
 
-// define the structure
+/* define the structure*/
 typedef struct sBucket {
-    // key
+    /* key*/
     char * key;
     int key_length;
 
-    // value indicator
+    /* value indicator*/
     char * value_type;
     int value_type_length;
 
-    // value
+    /* value*/
     void * value;
 
-    // pointer to the next bucket
+    /* pointer to the next bucket*/
     struct sBucket * next_bucket;
 } Bucket;
 
-// constructor
+/* constructor*/
 Bucket * newBucket(char * new_key, char * value_type, void * value);
 
-// destructor
+/* destructor*/
 Bucket * freeBucket(Bucket * bucket);
 
 #endif /*BUCKET_H*/

@@ -1,16 +1,17 @@
+CFLAGS=-Wall -pedantic
 HEADERS=bucket.h hashmap.h
 OBJECTS=bucket.o hashmap.o
 
 all : test_hashmap
 
 bucket.o : bucket.h bucket.c
-	gcc bucket.c -c -o bucket.o
+	gcc -c -o bucket.o $(CFLAGS) bucket.c
 
 hashmap.o : bucket.h hashmap.h hashmap.c
-	gcc hashmap.c -c -o hashmap.o
+	gcc -c -o hashmap.o $(CFLAGS) hashmap.c
 
 test_hashmap : main.c $(HEADERS) $(OBJECTS)
-	gcc $(OBJECTS) main.c -o test_hashmap
+	gcc -o test_hashmap $(CFLAGS) $(OBJECTS) main.c
 
 test : test_hashmap
 	./test_hashmap

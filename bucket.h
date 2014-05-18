@@ -17,13 +17,14 @@ typedef struct sBucket {
 
     /* value*/
     void * value;
+    unsigned int size;
 
     /* pointer to the next bucket*/
     struct sBucket * next_bucket;
 } Bucket;
 
 /* constructor*/
-Bucket * newBucket(char * new_key, char * value_type, void * value);
+Bucket * newBucket(char * new_key, char * value_type, void * value, unsigned int size);
 
 /* destructor*/
 Bucket * freeBucket(Bucket * bucket);

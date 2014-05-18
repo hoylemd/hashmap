@@ -16,13 +16,20 @@ Bucket * newBucket(char * key, char * value_type, void * value, unsigned int siz
     the_new_bucket->size = size;
 
     /* populate the next pointer*/
-    the_new_bucket->next_bucket = NULL;
+    the_new_bucket->next = NULL;
 
     return the_new_bucket;
 }
 
 /* destructor*/
 Bucket * freeBucket(Bucket * bucket) {
+    bucket->key = NULL;
+    bucket->value_type = NULL;
+    bucket->value = NULL;
+    bucket->next = NULL;
+
+    free(bucket);
+
     return NULL;
 }
 

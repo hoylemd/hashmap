@@ -20,7 +20,7 @@ typedef struct sBucket {
     unsigned int size;
 
     /* pointer to the next bucket*/
-    struct sBucket * next_bucket;
+    struct sBucket * next;
 } Bucket;
 
 /* constructor*/

@@ -33,3 +33,21 @@ Bucket * freeBucket(Bucket * bucket) {
     return NULL;
 }
 
+/* accessor */
+Bucket * bucketGet(Bucket * bucket, char * key) {
+    Bucket * current_bucket = bucket;
+    int len = strlen(key);
+
+    while (current_bucket) {
+        /* check length first */
+        if (len - current_bucket->key_length == 0) {
+            /* check the key */
+            if (strncmp(key, current_bucket->key, len) == 0) {
+                return current_bucket;
+            }
+        }
+        current_bucket = current_bucket->next;
+    }
+
+    return NULL;
+}

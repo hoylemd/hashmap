@@ -29,4 +29,7 @@ Bucket * newBucket(char * new_key, char * value_type, void * value, unsigned int
 /* destructor*/
 Bucket * freeBucket(Bucket * bucket);
 
+/* accessor */
+Bucket * bucketGet(Bucket * bucket, char * key);
+
 #endif /*BUCKET_H*/

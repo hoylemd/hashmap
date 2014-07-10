@@ -11,7 +11,7 @@ hashmap.o : bucket.h hashmap.h hashmap.c
 	gcc -c -o hashmap.o $(CFLAGS) hashmap.c
 
 test_hashmap : main.c $(HEADERS) $(OBJECTS)
-	gcc -o test_hashmap $(CFLAGS) $(OBJECTS) main.c
+	gcc -o test_hashmap $(CFLAGS) $(OBJECTS) test.c
 
 test : test_hashmap
 	./test_hashmap
